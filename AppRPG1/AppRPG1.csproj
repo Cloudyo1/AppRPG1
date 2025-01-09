@@ -1,0 +1,376 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>AppRPG1</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>AppRPG1</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.apprpg1</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
+		<WindowsPackageType>None</WindowsPackageType>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Resources\Pages\Criaturas\DvergarPage.xaml.cs">
+	    <DependentUpon>DvergarPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\ManiPage.xaml.cs">
+	    <DependentUpon>ManiPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\SunnaPage.xaml.cs">
+	    <DependentUpon>SunnaPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\AegirPage.xaml.cs">
+	    <DependentUpon>AegirPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\HoenirPage.xaml.cs">
+	    <DependentUpon>HoenirPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\Vilipage.xaml.cs">
+	    <DependentUpon>ViliPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\IdunnPage.xaml.cs">
+	    <DependentUpon>IdunnPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\SigynPage.xaml.cs">
+	    <DependentUpon>SigynPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\HodrPage.xaml.cs">
+	    <DependentUpon>HodrPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\Ullr.xaml.cs">
+	    <DependentUpon>Ullr.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\RanPage.xaml.cs">
+	    <DependentUpon>RanPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\Forsetipage.xaml.cs">
+	    <DependentUpon>ForsetiPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\BragiPage.xaml.cs">
+	    <DependentUpon>BragiPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\ValiPage.xaml.cs">
+	    <DependentUpon>ValiPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\VidarrPage.xaml.cs">
+	    <DependentUpon>VidarrPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\SifPage.xaml.cs">
+	    <DependentUpon>SifPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\FriggPage.xaml.cs">
+	    <DependentUpon>FriggPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\BalderPage.xaml.cs">
+	    <DependentUpon>BalderPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\HeimdallPage.xaml.cs">
+	    <DependentUpon>HeimdallPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\TyrPage.xaml.cs">
+	    <DependentUpon>TyrPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\LokiPage.xaml.cs">
+	    <DependentUpon>LokiPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\ThorPage.xaml.cs">
+	    <DependentUpon>ThorPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Aesir\OdinPage.xaml.cs">
+	    <DependentUpon>OdinPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\PrimordialPage.xaml.cs">
+	    <DependentUpon>PrimordialPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Primordial\BuriPage.xaml.cs">
+	    <DependentUpon>BuriPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Primordial\NottPage.xaml.cs">
+	    <DependentUpon>NottPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Primordial\YmirPage.xaml.cs">
+	    <DependentUpon>YmirPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\VanirPage.xaml.cs">
+	    <DependentUpon>VanirPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\LofnPage.xaml.cs">
+	    <DependentUpon>LofnPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\Gullveig.xaml.cs">
+	    <DependentUpon>Gullveig.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\KvasirPage.xaml.cs">
+	    <DependentUpon>KvasirPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\HnossPage.xaml.cs">
+	    <DependentUpon>HnossPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\ByleistrPage.xaml.cs">
+	    <DependentUpon>ByleistrPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\HelPage.xaml.cs">
+	    <DependentUpon>HelPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\SkadiPage.xaml.cs">
+	    <DependentUpon>SkadiPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\NjordPage.xaml.cs">
+	    <DependentUpon>NjordPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\FreyjaPage.xaml.cs">
+	    <DependentUpon>FreyjaPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Pages\Deuses\Vanir\FreyrPage.xaml.cs">
+	    <DependentUpon>FreyrPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\ManiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\SunnaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\OdinPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\HoenirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\ViliPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\IdunnPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\SigynPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\HodrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\Ullr.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\RanPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\AegirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\ForsetiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\BragiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\ValiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\VidarrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\SifPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\FriggPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\BalderPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\HeimdallPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\TyrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\LokiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Aesir\ThorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\PrimordialPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Primordial\YmirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Primordial\BuriPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Primordial\NottPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\VanirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\AesirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\DokkalfarPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\DraugrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\DvergarPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\FenrirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\GoblinPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\HartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\HulderPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\JormungandrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\JotunPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\LindwyrmPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\LjosalfarPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\MimirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\NidhoggrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\NiflungrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\NornsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\NuckelaveePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\RatatoskrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\SkrymirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\StagsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\SurturPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\SwansPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\TrollPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\ValravnPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\VedrfolnirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Criaturas\WolvesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\LofnPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\Gullveig.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\KvasirPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\HnossPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\ByleistrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\HelPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\SkadiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\NjordPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\FreyjaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\Deuses\Vanir\FreyrPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

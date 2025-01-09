@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.DamagePage"
+             Title="Damage Page">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="10"
+            Spacing="15"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+            <!-- Top-Centered Image -->
+            <Image
+                Source="damage.webp" 
+                HeightRequest="200"
+                WidthRequest="200"
+                Aspect="AspectFit"
+                HorizontalOptions="Center" />
+
+            <!-- Button Grid: 2 buttons per row -->
+            <Grid ColumnDefinitions="235, 235" RowDefinitions="Auto, Auto, Auto, Auto" Padding="10" RowSpacing="15" ColumnSpacing="25">
+                <!-- Button 1 -->
+                <Frame x:Name="slash" Grid.Row="0" Grid.Column="0" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="slash.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Corte" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 2 -->
+                <Frame x:Name="puncture" Grid.Row="0" Grid.Column="1" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="puncture.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Punctura" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 3 -->
+                <Frame x:Name="impact" Grid.Row="1" Grid.Column="0" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="impact.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Impacto" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 4 -->
+                <Frame x:Name="heat" Grid.Row="1" Grid.Column="1" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="heat.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Fogo" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 5 -->
+                <Frame x:Name="cold" Grid.Row="2" Grid.Column="0" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="cold.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Gelo" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 6 -->
+                <Frame x:Name="electric" Grid.Row="2" Grid.Column="1" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="electric.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Eletricidade" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 7 -->
+                <Frame x:Name="toxin" Grid.Row="3" Grid.Column="0" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="toxin.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Toxina" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!-- Button 8 -->
+                <Frame x:Name="umbral" Grid.Row="3" Grid.Column="1" BackgroundColor="#4d0912" CornerRadius="25" HasShadow="True" Padding="10">
+                    <Grid ColumnDefinitions="100, *">
+                        <Image Source="umbral.webp" HeightRequest="80" WidthRequest="80" />
+                        <Label Text="Umbral" FontSize="20" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnButtonClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

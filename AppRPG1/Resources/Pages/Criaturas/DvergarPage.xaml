@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.DvergarPage"
+             Title="DvergarPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="dwarf.jpg" 
+               HeightRequest="300" 
+               WidthRequest="300" 
+               Aspect="AspectFit" 
+               HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Dvergar"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Os Anões, ou Dvergar, são mestres ferreiros e artesãos habilidosos. Forjadores de artefatos lendários como o martelo Mjolnir e o anel Draupnir, habitam as cavernas e montanhas profundas, longe da luz do sol. Além disso, são conhecidos por suas façanhas de grandeza e força, como os anões Nordri, Sudri, Austri, e Vestri, que sustentam os quatro cantos do céu, mantendo-o firme no alto. Esses anões simbolizam a resistência e a força das fundações do mundo, preservando a ordem e a estabilidade nos reinos."
+               FontSize="20"
+               LineHeight="1.5"
+               TextColor="White"
+               HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

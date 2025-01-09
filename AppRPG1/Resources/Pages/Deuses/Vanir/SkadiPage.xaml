@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.SkadiPage"
+             Title="SkadiPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="skadi.jpg" 
+           HeightRequest="300" 
+           WidthRequest="300" 
+           Aspect="AspectFit" 
+           HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Skadi"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalTextAlignment="Center"
+           TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Skadi é a deusa do inverno e das montanhas. Ela é filha do gigante Thjazi e esposa de Njord. Skadi é conhecida por sua habilidade com esquis e arco e flecha."
+           FontSize="20"
+           LineHeight="1.5"
+           TextColor="White"
+           HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

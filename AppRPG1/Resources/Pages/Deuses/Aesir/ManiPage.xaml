@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.ManiPage"
+             Title="ManiPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="mani.jpg" 
+           HeightRequest="300" 
+           WidthRequest="300" 
+           Aspect="AspectFit" 
+           HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Mani"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalTextAlignment="Center"
+           TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Mani é o deus da Lua, irmão de Sunna. Ele é responsável por conduzir a carruagem lunar através do céu, regulando o ciclo das fases da Lua. Mani, como sua irmã Sunna, é perseguido por um lobo, chamado Hati, que tenta capturá-lo. A luta constante entre Mani e Hati é uma das imagens simbólicas do ciclo lunar, com Mani representando a tranquilidade e a renovação das fases lunares. Assim como o Sol, a Lua de Mani é essencial para a harmonia e o equilíbrio do cosmos."
+           FontSize="20"
+           LineHeight="1.5"
+           TextColor="White"
+           HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

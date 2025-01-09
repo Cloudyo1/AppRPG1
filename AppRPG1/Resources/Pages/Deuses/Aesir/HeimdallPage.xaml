@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.HeimdallPage"
+             Title="HeimdallPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="heimdall.jpg" 
+           HeightRequest="300" 
+           WidthRequest="300" 
+           Aspect="AspectFit" 
+           HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Heimdall"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalTextAlignment="Center"
+           TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Heimdall é o deus da vigilância e da proteção, guardião da ponte Bifröst, que conecta Asgard ao mundo dos humanos, Midgard. Ele tem audição e visão extraordinárias, podendo ver a distância de mil léguas."
+           FontSize="20"
+           LineHeight="1.5"
+           TextColor="White"
+           HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

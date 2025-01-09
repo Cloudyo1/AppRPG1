@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.ImpactPage"
+             Title="Impact Page">
+
+    <!-- ScrollView to make the content scrollable -->
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="15" HorizontalOptions="Center" VerticalOptions="Start">
+
+            <!-- Image -->
+            <Image 
+                Source="impact.webp" 
+                HeightRequest="150"
+                WidthRequest="150"
+                Aspect="AspectFit"
+                HorizontalOptions="Center" />
+
+            <!-- Damage Type Name -->
+            <Label 
+                Text="Impacto" 
+                FontSize="30"
+                HorizontalTextAlignment="Center"
+                TextColor="White" />
+
+            <!-- Numeric Input and Slider Section -->
+            <VerticalStackLayout Padding="10" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <!-- Numeric Input Boxes -->
+                <Label Text="Digite os Valores Abaixo:" FontSize="20" TextColor="White" HorizontalOptions="Center" />
+                <Entry x:Name="Entry1" Placeholder="Vida Máxima do Alvo" Keyboard="Numeric" />
+                <Entry x:Name="Entry2" Placeholder="Vida Atual do Alvo" Keyboard="Numeric" />
+                <Entry x:Name="Entry3" Placeholder="Escudo do Alvo" Keyboard="Numeric" />
+                <Entry x:Name="Entry4" Placeholder="Durabilidade do Alvo" Keyboard="Numeric" />
+                <Entry x:Name="Entry5" Placeholder="Armadura do Alvo" Keyboard="Numeric" />
+                <Entry x:Name="Entry6" Placeholder="Seu Dano" Keyboard="Numeric" />
+
+                <!-- Slider -->
+                <Label Text="Penetração:" FontSize="20" TextColor="White" HorizontalOptions="Center" />
+                <Slider x:Name="ValueSlider" Minimum="0" Maximum="100" ValueChanged="OnSliderValueChanged" />
+                <Label x:Name="SliderValueLabel" Text="Value: 0" FontSize="18" TextColor="White" HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- Checkboxes Section -->
+            <VerticalStackLayout Spacing="0" HorizontalOptions="Center" VerticalOptions="Start">
+
+                <!-- Checkbox 1 -->
+                <HorizontalStackLayout Spacing="0" HorizontalOptions="Start">
+                    <CheckBox x:Name="CheckBox1" Color="White" />
+                    <Label Text="Envenenado" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                </HorizontalStackLayout>
+
+                <!-- Checkbox 2 -->
+                <HorizontalStackLayout Spacing="0" HorizontalOptions="Start">
+                    <CheckBox x:Name="CheckBox2" Color="White" />
+                    <Label Text="Vulnerável" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <!-- Confirm Button -->
+            <Button 
+                Text="Confirmar"
+                BackgroundColor="#4d0912"
+                TextColor="White"
+                CornerRadius="25"
+                Padding="10"
+                VerticalOptions="End"
+                Clicked="OnConfirmButtonClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

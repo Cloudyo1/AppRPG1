@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.GullveigPage"
+             Title="GullveigPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="gullveig.jpg" 
+           HeightRequest="300" 
+           WidthRequest="300" 
+           Aspect="AspectFit" 
+           HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Gullveig"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalTextAlignment="Center"
+           TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Gullveig é uma deusa associada à magia, ao ouro e à feitiçaria. Ela é uma figura importante na mitologia, particularmente por sua conexão com os eventos que levaram à guerra entre os Aesir e os Vanir. Gullveig foi queimada três vezes pelos Aesir, mas sempre ressurgia, o que a fez ser chamada de a que volta ou a que renasce. Ela é uma representação do poder do ouro e da magia, sendo uma das figuras que simbolizam a natureza do conflito entre os dois clãs de deuses."
+           FontSize="20"
+           LineHeight="1.5"
+           TextColor="White"
+           HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

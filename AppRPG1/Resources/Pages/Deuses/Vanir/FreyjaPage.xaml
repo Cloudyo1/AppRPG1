@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.FreyjaPage"
+             Title="FreyjaPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="freya.jpg" 
+           HeightRequest="300" 
+           WidthRequest="300" 
+           Aspect="AspectFit" 
+           HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Freyja"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalTextAlignment="Center"
+           TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Freyja é a deusa do amor, da beleza e da fertilidade. Ela é irmã de Freyr e uma das deusas mais poderosas, associada à magia e à seidr, a arte da profecia."
+           FontSize="20"
+           LineHeight="1.5"
+           TextColor="White"
+           HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

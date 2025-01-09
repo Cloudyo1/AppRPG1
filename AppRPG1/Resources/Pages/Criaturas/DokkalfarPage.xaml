@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRPG1.DokkalfarPage"
+             Title="Dokkalfar">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Image of the Dokkalfar -->
+            <Image Source="dokkalfar.jpeg" 
+                   HeightRequest="300" 
+                   WidthRequest="300" 
+                   Aspect="AspectFit" 
+                   HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Dokkalfar"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Turquoise" />
+
+            <!-- Description Text -->
+            <Label Text="Os Dokkalfar, também conhecidos como Elfos Negros, são seres misteriosos e sombrios. Reconhecidos por sua agilidade e astúcia, habitam os cantos mais profundos das florestas e cavernas subterrâneas. Mestres do silêncio, são frequentemente associados à escuridão e ao engano."
+                   FontSize="20"
+                   LineHeight="1.5"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
