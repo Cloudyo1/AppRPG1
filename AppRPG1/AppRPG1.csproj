@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>
+			net9.0-android;net9.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
@@ -45,33 +46,39 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <RunAOTCompilation>False</RunAOTCompilation>
-	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationTitle>Heidrun's Mead</ApplicationTitle>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
-	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationTitle>Heidrun's Mead</ApplicationTitle>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-maccatalyst|AnyCPU'">
-	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationTitle>Heidrun's Mead</ApplicationTitle>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationTitle>Heidrun's Mead</ApplicationTitle>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-maccatalyst|AnyCPU'">
-	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationTitle>Heidrun's Mead</ApplicationTitle>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationTitle>Heidrun's Mead</ApplicationTitle>
 	</PropertyGroup>
 
 	<ItemGroup>

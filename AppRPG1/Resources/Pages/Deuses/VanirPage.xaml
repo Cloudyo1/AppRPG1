@@ -25,7 +25,7 @@
         <VerticalStackLayout Padding="10" Spacing="25" HorizontalOptions="Center" VerticalOptions="Start">
 
             <!-- Centralized Image -->
-            <Image Source="wyrd.png" 
+            <Image Source="wyrd.webp" 
            HeightRequest="300" 
            WidthRequest="300" 
            Aspect="AspectFit" 

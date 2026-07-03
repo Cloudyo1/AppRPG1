@@ -26,7 +26,7 @@
         <VerticalStackLayout Padding="10" Spacing="15" HorizontalOptions="Center" VerticalOptions="Start">
 
             <!-- Centralized Image -->
-            <Image Source="jormungandr.png" 
+            <Image Source="jormungandr1.webp" 
                    HeightRequest="250" 
                    WidthRequest="250" 
                    Aspect="AspectFit" 

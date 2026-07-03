@@ -7,7 +7,7 @@
         <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
 
             <!-- Image of the Dokkalfar -->
-            <Image Source="gullveig.jpg" 
+            <Image Source="gullveig.webp" 
            HeightRequest="300" 
            WidthRequest="300" 
            Aspect="AspectFit" 

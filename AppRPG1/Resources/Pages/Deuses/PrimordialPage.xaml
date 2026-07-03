@@ -25,7 +25,7 @@
     <VerticalStackLayout Padding="10" Spacing="25" HorizontalOptions="Center" VerticalOptions="Start">
 
         <!-- Centralized Image -->
-        <Image Source="triqueta.png" 
+        <Image Source="triqueta.webp" 
            HeightRequest="250" 
            WidthRequest="250" 
            Aspect="AspectFit" 
